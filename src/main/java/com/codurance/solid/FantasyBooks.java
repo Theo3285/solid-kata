@@ -2,7 +2,6 @@ package com.codurance.solid;
 
 import java.util.List;
 
-import static com.codurance.solid.BookType.COOKING;
 import static com.codurance.solid.BookType.FANTASY;
 
 public class FantasyBooks extends Books {
