@@ -2,9 +2,7 @@ package com.codurance.solid;
 
 import java.util.List;
 
-import static com.codurance.solid.BookType.COOKING;
-import static com.codurance.solid.BookType.IT;
-import static com.codurance.solid.BookType.TRAVEL;
+import static com.codurance.solid.BookType.*;
 
 class OtherBooks extends Books {
     private final List<Book> books;
@@ -30,7 +28,7 @@ class OtherBooks extends Books {
     }
 
     private boolean isOther(Book book) {
-        return !TRAVEL.equals(book.type()) && !IT.equals(book.type()) && !COOKING.equals(book.type());
+        return !TRAVEL.equals(book.type()) && !IT.equals(book.type()) && !FANTASY.equals(book.type());
     }
 
 }

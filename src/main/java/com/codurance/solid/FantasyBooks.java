@@ -3,12 +3,13 @@ package com.codurance.solid;
 import java.util.List;
 
 import static com.codurance.solid.BookType.COOKING;
+import static com.codurance.solid.BookType.FANTASY;
 
-public class CookingBooks extends Books {
+public class FantasyBooks extends Books {
 
     private final List<Book> books;
 
-    CookingBooks(List<Book> books) {
+    FantasyBooks(List<Book> books) {
         this.books = books;
     }
 
@@ -16,7 +17,7 @@ public class CookingBooks extends Books {
     public double getPrice() {
         double price = 0;
         for (Book book : books) {
-            if (isCooking(book)) {
+            if (isFantasy(book)) {
                 price += book.price();
             }
         }
@@ -34,15 +35,15 @@ public class CookingBooks extends Books {
     private double count() {
         double totalBooks = 0;
         for (Book book : books) {
-            if (isCooking(book)) {
+            if (isFantasy(book)) {
                 totalBooks++;
             }
         }
         return totalBooks;
     }
 
-    private boolean isCooking(Book book) {
-        return COOKING.equals(book.type());
+    private boolean isFantasy(Book book) {
+        return FANTASY.equals(book.type());
     }
 
 }

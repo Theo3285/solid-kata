@@ -26,7 +26,7 @@ public class BasketShould {
 
 	@Test public void 
 	give_no_discount_when_book_is_not_eligible_for_a_discount() {
-		Book aBookWithNoDiscount = aFantasyBook().costing(10.00).build();
+		Book aBookWithNoDiscount = aCookingBook().costing(10.00).build();
 		Basket basket = aBasket().with(aBookWithNoDiscount).build();
 		
 		assertThat(basket.priceWithDiscount(), is(10.0));
@@ -124,11 +124,11 @@ public class BasketShould {
 	give_40_percent_discount_for_Cooking_book_when_containing_4_of_them() {
 		Basket basket = aBasket()
 				.with(
-						aCookingBook().costing(10.0).build(),
-						aCookingBook().costing(20.0).build(),
-						aCookingBook().costing(30.0).build(),
-						aCookingBook().costing(40.0).build(),
-						aCookingBook().costing(50.0).build())
+						aFantasyBook().costing(10.0).build(),
+						aFantasyBook().costing(20.0).build(),
+						aFantasyBook().costing(30.0).build(),
+						aFantasyBook().costing(40.0).build(),
+						aFantasyBook().costing(50.0).build())
 				.build();
 
 		assertThat(basket.priceWithDiscount(), is(90.0));
